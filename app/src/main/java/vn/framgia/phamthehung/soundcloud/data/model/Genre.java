@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Genre implements Parcelable {
+
     private String mKey;
     private String mName;
     private int mImage;
@@ -25,6 +26,7 @@ public class Genre implements Parcelable {
             return new Genre[size];
         }
     };
+
 
     public String getKey() {
         return mKey;
