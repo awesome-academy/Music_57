@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/discover"
+        android:icon="@drawable/ic_disc"
+        android:title="@string/discover" />
+    <item
+        android:id="@+id/personal"
+        android:icon="@drawable/ic_personal"
+        android:title="@string/personal" />
+    <item
+        android:id="@+id/setting"
+        android:icon="@drawable/setting"
+        android:title="@string/title_setting" />
+</menu>

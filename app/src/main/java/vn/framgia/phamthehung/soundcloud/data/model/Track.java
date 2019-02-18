@@ -17,6 +17,12 @@ public class Track implements Parcelable {
     private boolean mIsOffline;
     private String mGenre;
 
+    public Track(int id, String title, String artist) {
+        mId = id;
+        mTitle = title;
+        mArtist = artist;
+    }
+
     protected Track(Parcel in) {
         mId = in.readInt();
         mDuration = in.readInt();
