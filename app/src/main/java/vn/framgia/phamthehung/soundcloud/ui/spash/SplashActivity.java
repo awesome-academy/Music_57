@@ -20,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        getSupportActionBar().hide();
         mAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.translate);
         mImageView = findViewById(R.id.image_view);
         mImageView.setVisibility(View.VISIBLE);
