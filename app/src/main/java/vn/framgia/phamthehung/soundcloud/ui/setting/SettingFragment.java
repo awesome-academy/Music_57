@@ -17,4 +17,10 @@ public class SettingFragment extends Fragment {
                              @Nullable ViewGroup container, @Nullable Bundle savedInstaneState) {
         return inflater.inflate(R.layout.fragment_setting, container, false);
     }
+
+    public static Fragment newInstance() {
+        Fragment fragment = new SettingFragment();
+        return fragment;
+    }
+
 }

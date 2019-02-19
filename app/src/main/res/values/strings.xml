@@ -4,4 +4,11 @@
     <string name="title_discover">Discover</string>
     <string name="title_personal">Personal</string>
     <string name="title_setting">Setting</string>
+    <string name="action_search_music">Search Music</string>
+    <string name="title_all_music">All Music</string>
+    <string name="title_all_audio">All Audio</string>
+    <string name="title_alternativerock">Alternativerock</string>
+    <string name="title_ambient">Ambient</string>
+    <string name="title_classical">Classical</string>
+    <string name="title_country">Country</string>
 </resources>

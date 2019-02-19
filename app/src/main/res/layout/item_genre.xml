@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/image_genre"
-        android:layout_width="@dimen/dp_0"
+        android:layout_width="0dp"
         android:layout_height="@dimen/dp_160"
         android:layout_marginStart="@dimen/dp_4"
         android:layout_marginLeft="@dimen/dp_4"
@@ -22,10 +22,10 @@
 
     <TextView
         android:id="@+id/text_genre"
-        android:layout_width="@dimen/dp_0"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/all_music"
+        android:text="@string/title_all_music"
         android:textSize="@dimen/sp_22"
         android:textStyle="bold"
         android:textColor="@color/color_white"

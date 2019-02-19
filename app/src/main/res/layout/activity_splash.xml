@@ -8,11 +8,12 @@
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="@dimen/dp_200"
-        android:layout_height="@dimen/dp_200"
+        android:layout_width="@dimen/dp_140"
+        android:layout_height="@dimen/dp_140"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_app" />
+
 </android.support.constraint.ConstraintLayout>
