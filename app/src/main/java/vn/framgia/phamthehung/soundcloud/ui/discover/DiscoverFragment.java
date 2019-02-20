@@ -1,5 +1,6 @@
 package vn.framgia.phamthehung.soundcloud.ui.discover;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,10 +16,10 @@ import java.util.List;
 
 import vn.framgia.phamthehung.soundcloud.R;
 import vn.framgia.phamthehung.soundcloud.data.model.Genre;
-import vn.framgia.phamthehung.soundcloud.ui.setting.SettingFragment;
+import vn.framgia.phamthehung.soundcloud.ui.genre.GenreActivity;
 
-public class DiscoverFragment extends Fragment {
-    List<Genre> mGenres = new ArrayList<>();
+public class DiscoverFragment extends Fragment implements DiscoverAdapter.OnItemClickListener {
+    private List<Genre> mGenres;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -29,6 +30,7 @@ public class DiscoverFragment extends Fragment {
     }
 
     private void initUI(View view) {
+        mGenres = new ArrayList<>();
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         mGenres.add(new Genre(getString(R.string.title_all_music),R.drawable.genre));
         mGenres.add(new Genre(getString(R.string.title_all_audio),R.drawable.genre_1));
@@ -36,7 +38,7 @@ public class DiscoverFragment extends Fragment {
         mGenres.add(new Genre(getString(R.string.title_ambient),R.drawable.genre_4));
         mGenres.add(new Genre(getString(R.string.title_classical),R.drawable.genre_5));
         mGenres.add(new Genre(getString(R.string.title_country),R.drawable.genre_3));
-        DiscoverAdapter discoverAdapter = new DiscoverAdapter(getActivity(),mGenres);
+        DiscoverAdapter discoverAdapter = new DiscoverAdapter(getActivity(), mGenres, this);
         recyclerView.setAdapter(discoverAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
     }
@@ -45,4 +47,11 @@ public class DiscoverFragment extends Fragment {
         Fragment fragment = new DiscoverFragment();
         return fragment;
     }
+
+    @Override
+    public void onDataGenre(Genre genre) {
+        Intent intent = GenreActivity.getIntent(getActivity(), genre);
+        startActivity(intent);
+    }
+
 }

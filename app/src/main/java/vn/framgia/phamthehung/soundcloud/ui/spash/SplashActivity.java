@@ -12,7 +12,7 @@ import vn.framgia.phamthehung.soundcloud.MainActivity;
 import vn.framgia.phamthehung.soundcloud.R;
 
 public class SplashActivity extends AppCompatActivity {
-    private static final int TIME_DELAY = 10000;
+    private static final int TIME_DELAY = 5000;
     private ImageView mImageView;
     private Animation mAnimation;
 

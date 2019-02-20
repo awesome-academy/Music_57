@@ -7,12 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import vn.framgia.phamthehung.soundcloud.ui.discover.DiscoverAdapter;
 import vn.framgia.phamthehung.soundcloud.ui.discover.DiscoverFragment;
 import vn.framgia.phamthehung.soundcloud.ui.personal.PersonalFragment;
 import vn.framgia.phamthehung.soundcloud.ui.setting.SettingFragment;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity
+        implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = DiscoverFragment.newInstance();
                 break;
             case R.id.personal:
-                fragment = new PersonalFragment();
+                fragment = PersonalFragment.newInstance();
                 break;
             case R.id.setting:
-                fragment = new SettingFragment();
+                fragment = SettingFragment.newInstance();
                 break;
         }
         getSupportFragmentManager().beginTransaction()
