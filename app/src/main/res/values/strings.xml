@@ -11,4 +11,9 @@
     <string name="title_ambient">Ambient</string>
     <string name="title_classical">Classical</string>
     <string name="title_country">Country</string>
+    <string name="title_search">Search</string>
+    <string name="msg_no_network">No default network is currently active!</string>
+    <string name="msg_not_connected">Network is not connected!</string>
+    <string name="msg_not_available">Network not available!</string>
+    <string name="null_string" />
 </resources>

@@ -8,7 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import vn.framgia.phamthehung.soundcloud.MainActivity;
+import vn.framgia.phamthehung.soundcloud.ui.main.MainActivity;
 import vn.framgia.phamthehung.soundcloud.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -20,7 +20,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        getSupportActionBar().hide();
         mAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.translate);
         mImageView = findViewById(R.id.image_view);
         mImageView.setVisibility(View.VISIBLE);
