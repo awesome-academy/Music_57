@@ -9,6 +9,9 @@ public class Genre implements Parcelable {
     private String mName;
     private int mImage;
 
+    public Genre() {
+    }
+
     protected Genre(Parcel in) {
         mKey = in.readString();
         mName = in.readString();
