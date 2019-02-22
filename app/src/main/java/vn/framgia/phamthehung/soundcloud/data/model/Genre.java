@@ -18,10 +18,6 @@ public class Genre implements Parcelable {
         mImage = in.readInt();
     }
 
-    public Genre(String name, int image) {
-        mName = name;
-        mImage = image;
-    }
 
     public static final Creator<Genre> CREATOR = new Creator<Genre>() {
         @Override
