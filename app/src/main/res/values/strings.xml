@@ -16,4 +16,10 @@
     <string name="msg_not_connected">Network is not connected!</string>
     <string name="msg_not_available">Network not available!</string>
     <string name="null_string" />
+    <string name="key_all_music">soundcloud:genres:all-music</string>
+    <string name="key_all_audio">soundcloud:genres:all-audio</string>
+    <string name="key_alternativerock">soundcloud:genres:alternativerock</string>
+    <string name="key_ambient">soundcloud:genres:ambient</string>
+    <string name="key_classical">soundcloud:genres:classical</string>
+    <string name="key_country">soundcloud:genres:country</string>
 </resources>

@@ -10,7 +10,7 @@ import java.util.List;
 import vn.framgia.phamthehung.soundcloud.data.model.Track;
 import vn.framgia.phamthehung.soundcloud.data.source.TrackDataSource;
 
-public class TrackAsyncTask extends BaseAsyncTask {
+public class TrackAsyncTask extends BaseAsyncTask<Track> {
     private static final String ARTWORK_URL = "artwork_url";
     private static final String COLLECTION = "collection";
     public static final String ID = "id";

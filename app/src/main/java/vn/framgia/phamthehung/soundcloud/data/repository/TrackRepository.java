@@ -2,6 +2,7 @@ package vn.framgia.phamthehung.soundcloud.data.repository;
 
 import vn.framgia.phamthehung.soundcloud.data.model.Track;
 import vn.framgia.phamthehung.soundcloud.data.source.TrackDataSource;
+import vn.framgia.phamthehung.soundcloud.data.source.remote.TrackRemoteDataSource;
 
 public class TrackRepository implements TrackDataSource.Remote {
     private static TrackRepository sInstance;
@@ -11,9 +12,9 @@ public class TrackRepository implements TrackDataSource.Remote {
         mRemote = remote;
     }
 
-    public static synchronized TrackRepository getsInstance() {
+    public static synchronized TrackRepository getsInstance(TrackRemoteDataSource remote) {
         if (sInstance == null) {
-            sInstance = new TrackRepository(sInstance);
+            sInstance = new TrackRepository(remote);
         }
         return sInstance;
     }
