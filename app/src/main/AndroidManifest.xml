@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.genre.GenreActivity"/>
+        <activity android:name=".ui.playmusic.PlayMusicActivity"></activity>
+        <activity android:name=".ui.genre.GenreActivity" />
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.spash.SplashActivity">
             <intent-filter>

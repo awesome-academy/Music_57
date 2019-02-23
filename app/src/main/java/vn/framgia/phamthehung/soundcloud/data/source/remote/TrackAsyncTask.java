@@ -9,6 +9,7 @@ import java.util.List;
 
 import vn.framgia.phamthehung.soundcloud.data.model.Track;
 import vn.framgia.phamthehung.soundcloud.data.source.TrackDataSource;
+import vn.framgia.phamthehung.soundcloud.util.StringUtil;
 
 public class TrackAsyncTask extends BaseAsyncTask<Track> {
     private static final String ARTWORK_URL = "artwork_url";
@@ -20,6 +21,9 @@ public class TrackAsyncTask extends BaseAsyncTask<Track> {
     private static final String TRACK = "track";
     private static final String DOWNLOADABLE = "downloadable";
     private static final String DOWNLOAD_URL = "download_url";
+    private static final String LIKES_COUNT = "likes_count";
+    private static final String PLAYBACK_COUNT = "playback_count";
+    private static final String COMMENT_COUNT = "comment_count";
 
     public TrackAsyncTask(TrackDataSource.DataCallback<Track> callback) {
         super(callback);
@@ -37,11 +41,23 @@ public class TrackAsyncTask extends BaseAsyncTask<Track> {
                 int id = track.getInt(ID);
                 String title = track.getString(TITLE);
                 String artworkUrl = track.getString(ARTWORK_URL);
+                int likesCount = track.getInt(LIKES_COUNT);
+                int playbackCount = track.getInt(PLAYBACK_COUNT);
+                int commentCount = track.getInt(COMMENT_COUNT);
                 String artist = track.getJSONObject(KEY_USER)
                         .getString(KEY_USER_NAME);
                 boolean isDownloadable = track.getBoolean(DOWNLOADABLE);
-                String downloadUrl = track.getString(DOWNLOAD_URL);
+                String downloadUrl = null;
+                if (isDownloadable) {
+                    downloadUrl = StringUtil.initDownloadApi(track.getString(DOWNLOAD_URL));
+                }
                 Track trackObject = new Track(id, title, artist);
+                trackObject.setArtworkUrl(artworkUrl);
+                trackObject.setDownloadable(isDownloadable);
+                trackObject.setDownloadUrl(downloadUrl);
+                trackObject.setLikesCount(likesCount);
+                trackObject.setPlaybackCount(playbackCount);
+                trackObject.setCommentCount(commentCount);
                 tracks.add(trackObject);
             }
         } catch (JSONException e) {
