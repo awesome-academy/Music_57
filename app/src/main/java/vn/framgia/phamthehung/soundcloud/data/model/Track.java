@@ -3,8 +3,6 @@ package vn.framgia.phamthehung.soundcloud.data.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
-
 public class Track implements Parcelable {
     private int mId;
     private int mDuration;
@@ -16,6 +14,9 @@ public class Track implements Parcelable {
     private boolean mIsDownloadable;
     private boolean mIsOffline;
     private String mGenre;
+    private int mLikesCount;
+    private int mPlaybackCount;
+    private int mCommentCount;
 
     public Track(int id, String title, String artist) {
         mId = id;
@@ -34,6 +35,9 @@ public class Track implements Parcelable {
         mIsDownloadable = in.readByte() != 0;
         mIsOffline = in.readByte() != 0;
         mGenre = in.readString();
+        mLikesCount = in.readInt();
+        mPlaybackCount = in.readInt();
+        mCommentCount = in.readInt();
     }
 
     public static final Creator<Track> CREATOR = new Creator<Track>() {
@@ -128,6 +132,30 @@ public class Track implements Parcelable {
         mGenre = genre;
     }
 
+    public int getLikesCount() {
+        return mLikesCount;
+    }
+
+    public void setLikesCount(int likesCount) {
+        mLikesCount = likesCount;
+    }
+
+    public int getPlaybackCount() {
+        return mPlaybackCount;
+    }
+
+    public void setPlaybackCount(int playbackCount) {
+        mPlaybackCount = playbackCount;
+    }
+
+    public int getCommentCount() {
+        return mCommentCount;
+    }
+
+    public void setCommentCount(int commentCount) {
+        mCommentCount = commentCount;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -145,5 +173,8 @@ public class Track implements Parcelable {
         dest.writeByte((byte) (mIsDownloadable ? 1 : 0));
         dest.writeByte((byte) (mIsOffline ? 1 : 0));
         dest.writeString(mGenre);
+        dest.writeInt(mLikesCount);
+        dest.writeInt(mPlaybackCount);
+        dest.writeInt(mCommentCount);
     }
 }

@@ -17,15 +17,15 @@ import vn.framgia.phamthehung.soundcloud.data.model.Track;
 public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> {
     private List<Track> mTracks;
     private LayoutInflater mLayoutInflater;
-    private GenreAdapter.OnItemClickListener mListener;
+    private OnItemClickListenerTracks mListener;
 
-    public interface OnItemClickListener {
+    public interface OnItemClickListenerTracks {
         void onTrackClick(Track track);
 
         void onMoreClick(Track track);
     }
 
-    public GenreAdapter(Context context, List<Track> tracks, GenreAdapter.OnItemClickListener listener) {
+    public GenreAdapter(Context context, List<Track> tracks, OnItemClickListenerTracks listener) {
         mLayoutInflater = LayoutInflater.from(context);
         mTracks = tracks;
         mListener = listener;
@@ -54,18 +54,20 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
         private TextView mArtist;
         private ImageView mImage;
         private Track mTrack;
-        private OnItemClickListener mListener;
+        private OnItemClickListenerTracks mListener;
 
-        public ViewHolder(@NonNull View itemView, GenreAdapter.OnItemClickListener listener) {
+        public ViewHolder(@NonNull View itemView, OnItemClickListenerTracks listener) {
             super(itemView);
             mListener = listener;
             mTextCount = itemView.findViewById(R.id.text_count);
             mTextName = itemView.findViewById(R.id.text_name_track);
             mArtist = itemView.findViewById(R.id.text_artist_track);
             mImage = itemView.findViewById(R.id.image_more);
+            itemView.setOnClickListener(this);
         }
 
         public void bindData(final Track track, int i) {
+            mTrack = track;
             mTextCount.setText(String.valueOf(i));
             mTextName.setText(track.getTitle());
             mArtist.setText(track.getArtist());

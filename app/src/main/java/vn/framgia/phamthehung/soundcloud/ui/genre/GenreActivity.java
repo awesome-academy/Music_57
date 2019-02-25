@@ -20,9 +20,11 @@ import vn.framgia.phamthehung.soundcloud.data.model.Genre;
 import vn.framgia.phamthehung.soundcloud.data.model.Track;
 import vn.framgia.phamthehung.soundcloud.data.repository.TrackRepository;
 import vn.framgia.phamthehung.soundcloud.data.source.remote.TrackRemoteDataSource;
+import vn.framgia.phamthehung.soundcloud.ui.detailtrack.DetailTrackFragment;
+import vn.framgia.phamthehung.soundcloud.ui.playmusic.PlayMusicActivity;
 
 public class GenreActivity extends AppCompatActivity implements GenreContract.View,
-        View.OnClickListener, GenreAdapter.OnItemClickListener {
+        View.OnClickListener, GenreAdapter.OnItemClickListenerTracks {
     public static final String GENRE_KEY = "GENRE_KEY";
     private ImageView mImageGenre;
     private TextView mTextShuffle;
@@ -112,11 +114,13 @@ public class GenreActivity extends AppCompatActivity implements GenreContract.Vi
 
     @Override
     public void onTrackClick(Track track) {
-
+        Intent intent = PlayMusicActivity.getIntent(GenreActivity.this);
+        startActivity(intent);
     }
 
     @Override
     public void onMoreClick(Track track) {
-
+        DetailTrackFragment detailTrackFragment = DetailTrackFragment.newInstance(track);
+        detailTrackFragment.show(getSupportFragmentManager(), detailTrackFragment.getTag());
     }
 }

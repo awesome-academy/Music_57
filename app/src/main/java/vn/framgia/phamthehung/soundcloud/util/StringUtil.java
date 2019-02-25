@@ -10,4 +10,11 @@ public class StringUtil {
                 , Constants.LIMIT
                 , Constants.OFFSET);
     }
+    public static String initDownloadApi(String url) {
+        return String.format(url, Constants.PARAMETER_ID, BuildConfig.ApiKey);
+    }
+
+    public static String initString(String a, String b) {
+        return String.format(Constants.STRING_FORMAT, a, b);
+    }
 }

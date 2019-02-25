@@ -22,4 +22,10 @@
     <string name="key_ambient">soundcloud:genres:ambient</string>
     <string name="key_classical">soundcloud:genres:classical</string>
     <string name="key_country">soundcloud:genres:country</string>
+    <string name="title_favorited">512K</string>
+    <string name="title_play">526Tr</string>
+    <string name="title_download">Download</string>
+    <string name="title_add_to_favorite">Add to favorite</string>
+    <string name="msg_k">K</string>
+    <string name="msg_tr">Tr</string>
 </resources>
