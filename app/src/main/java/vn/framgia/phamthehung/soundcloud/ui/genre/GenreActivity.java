@@ -114,7 +114,7 @@ public class GenreActivity extends AppCompatActivity implements GenreContract.Vi
 
     @Override
     public void onTrackClick(Track track) {
-        Intent intent = PlayMusicActivity.getIntent(GenreActivity.this);
+        Intent intent = PlayMusicActivity.getIntent(GenreActivity.this, mTracks);
         startActivity(intent);
     }
 
