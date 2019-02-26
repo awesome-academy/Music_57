@@ -68,12 +68,13 @@ public class PlayMusicService extends Service {
         Bitmap image = (Bitmap) BitmapFactory.decodeResource(getResources(), R.drawable.genre);
         Notification.Builder builder = new Notification.Builder(this)
                 .setShowWhen(false)
-                .setStyle(new Notification.MediaStyle())
+                .setStyle(new Notification.MediaStyle().setShowActionsInCompactView(0, 1, 2))
                 .setSmallIcon(android.R.drawable.sym_def_app_icon)
                 .setLargeIcon(image)
                 .setContentTitle(getString(R.string.title_all_music))
                 .setContentText(getString(R.string.title_all_music))
                 .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
                 .addAction(R.drawable.ic_previous
                         , getString(R.string.title_previous), getPlayBackAction(CODE_PREVIOUS))
                 .addAction(actionPlayPauseImage
@@ -116,3 +117,4 @@ public class PlayMusicService extends Service {
         return null;
     }
 }
+
